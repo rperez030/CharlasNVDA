@@ -24,20 +24,35 @@ Ponentes: Juanjo y **
 
 ## Control de versiones. Git y Github desde Visual Studio Code
 
-Ponentes: Dani y **
+Ponentes: Dani y Rober
 
 ### Introducción/refresco sobre control de versiones
 
-1. De qué va el control de versiones. El timeline local en el explorador de archivos
+1. De qué va el control de versiones. El timeline local en el explorador de archivos o en un editor de texto enriquecido tipo Docs o Word
 2. Repaso rápido de un flujo normal con Git y Github en la línea de comandos:
-- Inicializar el repositorio
-- hacer cambios + add + commit
+  - Inicializar el repositorio
+  - hacer cambios + add + commit
 3. Crear ramas, moverse entre ramas
-4. Repositorios remotos, pull y push
+4. Stash?
+5. Repositorios remotos, pull y push
+
+### GitHub en la web
+
+1. Visualizaciónd e un repositorio
+  - Código
+ - Issues
+  - PRs
+ - ETC
+1. Vista del explorador de archivos en modo tabla
+1. Crear un archivo
+1. Editor web
+  - Editor tradicional de GitHub
+  - Editor de GitHub.dev (versiond e VSCode on the Web)
 
 ### Control de versiones con Visual Studio Code
 
 1. Instalando extensiones de Visual Studio Code. Extensiones útiles para Git/Github
+  - GitHub Pull Request
 2. Inicializar repositorios, el flujo de cambios+add+commmit en VSCode
 3. Panel "Source control" y vista de commits
 4. Crear ramas y moverse entre ellas desde VSCode
