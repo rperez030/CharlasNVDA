@@ -40,9 +40,9 @@ Ponentes: Dani y Rober
 
 1. Visualizaciónd e un repositorio
   - Código
- - Issues
+  - Issues
   - PRs
- - ETC
+  - ETC
 1. Vista del explorador de archivos en modo tabla
 1. Crear un archivo
 1. Editor web
