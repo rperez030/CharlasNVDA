@@ -1,6 +1,6 @@
 # Índice de propuestas de charlas
 
-## 1. Manejo básico de Visual Studio Code
+## 1. Un vistazo al accesso no visual a visual studio Code
 
 Ponentes: Rober y Ramón
 
