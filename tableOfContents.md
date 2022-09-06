@@ -31,7 +31,7 @@ Ponentes: Dani y Rober
 1. De qué va el control de versiones. El timeline local en el explorador de archivos o en un editor de texto enriquecido tipo Docs o Word
 2. Repaso rápido de un flujo normal con Git y Github en la línea de comandos:
   - Inicializar el repositorio
-  - hacer cambios + add + commit
+  - Hacer cambios + add + commit
 3. Crear ramas, moverse entre ramas
 4. Stash?
 5. Repositorios remotos, pull y push
@@ -42,7 +42,7 @@ Ponentes: Dani y Rober
   - Código
   - Issues
   - PRs
-  - ETC
+  - Proyectos, milestones, etiquetas ...
 1. Vista del explorador de archivos en modo tabla
 1. Crear un archivo
 1. Editor web
@@ -52,7 +52,9 @@ Ponentes: Dani y Rober
 ### Control de versiones con Visual Studio Code
 
 1. Instalando extensiones de Visual Studio Code. Extensiones útiles para Git/Github
-  - GitHub Pull Request
+  - GitHub Pull Requests and Issues
+  - GitHub Remote
+  - GitHub lens???
 2. Inicializar repositorios, el flujo de cambios+add+commmit en VSCode
 3. Panel "Source control" y vista de commits
 4. Crear ramas y moverse entre ellas desde VSCode
