@@ -2,11 +2,17 @@
 
 El plazo de entrega vence el 12 de septiembre.
 
-* Correo electrónico: charadani@gmail.com
-* Teléfono de contacto: 622666520
-* Nombre y apellidos: Daniel Montalvo y Roberto Pérez
-* Perfil del ponente (usuario, desarrollador, etc.) y experiencia. supongo que es como una bio.
+* Correo electrónico:
+    charadani@gmail.com
+* Teléfono de contacto:
+    622666520
+* Nombre y apellidos:
+    Daniel Montalvo y Roberto Pérez
+* Perfil del ponente (usuario, desarrollador, etc.) y experiencia.
+    La bio la ponemos luego
 * Explicación de la charla: Introducción al manejo de Git y GitHub a través de distintos entornos, incluyendo la línea de comandos, la web y el IDE Visual Studio Code
+
+   Introducción al manejo de Git y GitHub a través de distintos entornos: la línea de comandos, la web y el IDE Visual Studio Code utilizando NVDA.
 
 * ¿qué crees que puede aportar a la comunidad?
 
