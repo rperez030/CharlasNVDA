@@ -1,28 +1,40 @@
 # Máquinas virtuales con VMware Workstation
 
+## Índice de contenidos
+
 0. Introducción. ¿Qué es una máquina virtual? Diferencias entre VMware Workstation Player y Pro
 1. Descargar una imagen ISO de Windows.
 2. Descargar e instalar VMware Player.
 3. Crear una máquina virtual. Disco duro, memoria, red.
-4. Instalar Windows en la máquina virtual.
+4. Instalar Windows en la máquina virtual usando el Narrador.
 5. Instalar VMware Tools.
-6. Configurar carpetas compartidas entre el anfitrión y el huésped. Instalar NVDA en el huésped.
-7. Comprobar la configuración de red. Otras configuraciones de red.
-8. Otras opciones disponibles en VMware Workstation Pro.
+6. Configurar carpetas compartidas entre el anfitrión y el huésped.
+7. Instalar NVDA en el huésped (mediante USB o usando carpetas compartidas).
+8. Comprobar la configuración de red. Otras configuraciones de red.
+9. Otras opciones disponibles en VMware Workstation Pro.
+
+## Introducción. ¿Qué es una máquina virtual?
+
+TBD. Work in progress.
 
 ## Antes de empezar: descargar imagen ISO de Windows 10
 
-- En el navegador, buscar "descargar imagen iso windows 10". Primer enlace: "Descargar imagen de disco de Windows 10 (archivo ISO)"
-- Ir al encabezado nivel 2 "¿Estás deseando instalar Windows 10 en tu PC?", siguiente botón "Descargar ahora la herramienta". Guardar el archivo "MediaCreationTool21H2.exe". Ejecutar ese archivo.
-- Creación de la imagen ISO:
-  - Aceptar la licencia para continuar
-  - Elegir "Crear medios de instalación (unidad flash USB, DVD o archivo ISO) para otro PC" y pulsar "Siguiente".
-  - Elegir idioma y arquitectura (por ejemplo, español, windows 10, 64 bit). Por defecto hay una opción marcada "usa las opciones recomendadas para este equipo", pero podemos elegir otra.
-  - Elegir "archivo ISO" para guardar un fichero que luego montaremos con VMware. También podríamos usar una unidad USB, pero yo prefiero hacerlo así.
-  - Guardar el archivo (ojo si intentas guardarlo en una unidad FAT32 que no admite ficheros de más de 4 GB). Recomendable darle un nombre identificativo con la versión y el idioma, por ejemplo: "windows10_64bit_en-us.iso".
-  - En la última pantalla, podríamos grabar en un DVD, pero pulsaremos "finalizar".
+Al igual que un ordenador físico, una máquina virtual no sirve para nada si no instalamos un sistema operativo. Por este motivo, antes de crear siquiera la máquina virtual vamos a descargar una imagen ISO de instalación de Windows 10, que será el sistema que instalaremos. Para ello seguimos los siguientes pasos:
 
-## Descargar e instalar VMware player
+1. Descarga la herramienta de creación de medios de Windows:
+   - Abre un navegador y busca "descargar imagen iso windows 10". Normalmente el primero de los resultados será el que buscamos: "Descargar imagen de disco de Windows 10 (archivo ISO)", en el sitio web de Microsoft.
+   - Entra en ese enlace y navega al encabezado de nivel 2 llamado "¿Estás deseando instalar Windows 10 en tu PC?", y luego pulsa el botón que hay justo a continuación, llamado "Descargar ahora la herramienta".
+   - Guarda el fichero "MediaCreationTool21H2.exe" en tu disco duro.
+2. Crea una imagen ISO del disco de instalación de Windows:
+   - Ejecuta el fichero recién descargado para iniciar la herramienta de creación de medios de Windows.
+   - Deberás aceptar la licencia para poder continuar con el proceso de creación de medios.
+   - Elige "Crear medios de instalación (unidad flash USB, DVD o archivo ISO) para otro PC" y pulsa "Siguiente".
+   - Elige el idioma de instalación y la arquitectura del procesador. Por defecto está marcada la opción "usa las opciones recomendadas para este equipo", pero podemos elegir otras, por ejemplo: español, windows 10, 64 bit.
+   - Elige "archivo ISO" para descargar una imagen ISO del disco de instalación; más adelante mmontaremos esta imagen como una unidad extraíble desde VMware.
+   - Guarda la imagen ISO en tu ordenador. Es recomendable darle un nombre identificativo con la versión y el idioma, por ejemplo: "windows10_64bit_es.iso". Ten en cuenta que el archivo descargado ocupará algo más de 4 GB, y por lo tanto el sistema de archivos de la unidad donde lo vayas a guardar deberá ser NTFS o extFAT (FAT32 no admite ficheros de más de 4 GB).
+   - Pulsa "Finalizar" en la última pantalla para cerrar la herramienta de creación de medios.
+
+## Descargar e instalar VMware Workstation Player
 
 - En un navegador, buscar "descargar vmware player". Dos encabezados y "descargar ahora"
 - Instalación:
