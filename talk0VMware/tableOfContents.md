@@ -12,6 +12,7 @@
 7. Instalar NVDA en el huésped (mediante USB o usando carpetas compartidas).
 8. Comprobar la configuración de red. Otras configuraciones de red.
 9. Otras opciones disponibles en VMware Workstation Pro.
+10. Instalar Windows 11 con VMware Workstation Pro
 
 ## Introducción. ¿Qué es una máquina virtual?
 
@@ -80,10 +81,46 @@ Al igual que un ordenador físico, una máquina virtual no sirve para nada si no
 - En el listado no tendremos ninguna de momento. Seguir tabulando hasta "add" y ajustar la carpeta del host y el nombre que tendrá en el guest. También si es "read only" o para lectura y escritura.
 - Tabular hasta "ok" y listo.
 
+- Primero tendremos que haber instalado las VMware Tools.
+- En el menú, ir a "VM" y luego a "Settings".
+- Shift+Tab para ir a las pestañas, cambiar a "Options".
+- En la lista, bajar hasta "Shared folders".
+- Tab y cambiar a "enabled" (al menos hasta el siguiente apagado).
+- Activar "Map as a network drive".
+- Tab para ir a las carpetas compartidas. Por defecto no habrá ninguna.
+- Tab y "add". Seguir el asistente.
+- Tab hasta "OK".
+
 ## Verificar la configuración de la red
 
-- Podemos hacerlo con la terminal o desde las opciones de red...
+Podemos hacerlo con la terminal o desde las opciones de red. Desde la terminal, basta con usar IPCONFIG en el huésped y luego subir con el cursor de revisión para localizar la IP que tiene asignada.
 
-## Otras posibilidades
+Luego desde el anfitrión probamos a hacer `ping` a esa IP. Por defecto puede ser que no podamos ver la máquina porque está deshabilitado el ping.
+
+Para que funcione el `ping`:
+
+- Pulsa ControlEscape para buscar "Firewall" e inicia "Firewall de Windows Defender".
+- Pulsa Tab hasta el botón "Configuración avanzada" (ojo, que está detrás de "restaurar valores por defecto").
+- En el árbol, abrir e ir a "reglas de entrada" y pulsar Tab para ir a la lista.
+- En la lista, buscar "AArchivos e impresoras compartidos (petición eco: ICMPv4 de entrada)".
+- Abrir el menú contextual con Shift+F10 y elegir "habilitar regla".
+
+Si no puedes conectar al puerto en la máquina virtual probablemente es también porque está bloqueado por el Firewall.
+
+- Pulsa Control+Esc para abrir la búsqueda: Firewall.
+- Baja hasta "Permitir que una aplicación o una característica a través de Firewall de Windows Defender".
+- En la lista de aplicaciones permitidas, shiftTab para ir al botón "cambiar configuración".
+- Nos sitúa en la lista pero ahora podemos marcar o desmarcar casillas. También podemos quitar una aplicación completamente, en ese caso igual luego nos pide permiso... Busca NVDA y actívalo.
+
+Al configurar el workgroup, en la red hay que indicarle que pueda descubrir equipos e impresoras.
+
+## Otras opciones en VMware Workstation Pro
+
+- Encriptar máquinas virtuales.
+- Snapshots.
+
+## Instalar Windows 11 con VMware Workstation Pro
+
+Requisitos mínimos: 2 núcleos, 4 GB RAM, Disco de 64 GB, WEFI+Secure boot, TPM (requiere encriptar la máquina).
 
 [Tutorial: instalación de Arch Linux de forma accesible](https://qcsalon.net/es/forum1000000/topic101902)
