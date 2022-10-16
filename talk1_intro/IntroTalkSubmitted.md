@@ -1,4 +1,3 @@
-
 # Un vistazo al accesso no visual a visual Studio Code
 
 ponentes: Ramón corominas y Roberto Perez
