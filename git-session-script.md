@@ -6,7 +6,7 @@ Ponentes: Dani y Rober
 
 ## De qué va el control de versiones
 
-Empezamos con el timeline local en Visual Studio Code para mostrar una idea básica sobre lo que significan varias versiones par aun solo archivo.
+Empezamos con el timeline local en Visual Studio Code para mostrar una idea básica sobre lo que significan varias versiones para un solo archivo.
 
 Cuando tenemos un único archivo para el cuál necesitamos registrar un control de versiones, Git no es de mucha utilidad. Cuando Git realmente es útil es cuando tenemos varios archivos o carpetas de los que queremos tener un control de versiones.
 
