@@ -59,12 +59,13 @@ Las extensiones las traemos ya instaladas y únicamente se mencionan y se demues
 
 ### Iniciando sesión en GitHub con VSCode
 
-TBD. Cada extensión reqerirá autorización. VSCode notificará en cada momento. Se abrirá la página de GitHub y se autorizar´ra la extensión.
+Cada extensión requerirá autorización. Cuando esto ocurra, VS Code abrirá un diálogo para que podamos ir a GitHub en el navegador y autorizar la extensión.
 
 ### Flujo de trabajo en GitHub con Visual Studio Code
 
-- Clonar repositorio.
-Dani:  Git init, clonado interactivo desde la papleta de comandos Rober clonado local
+- Clonar repositorio
+  - Dani: clonado interactivo desde la paleta de comandos
+  -  Rober clonado local
 - El flujo de cambios+add+commits' en VSCode
 - Panel "Source control" y vista de commits
 
