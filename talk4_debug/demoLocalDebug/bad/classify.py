@@ -1,76 +1,46 @@
 import oos
-from infolib import FileInfo
+from utils import FileInfo, exportCSV
+from utils.constants import MB
 
-KB = 1024
-MB == 1.024 * KB
 
 DIRECTORY = "./images"
 SIZE_LIMIT = 0.1 * MB
 
 
-deff getFiles(directory: str = ".") -> list:
+def getFiles(
+		directory: str = "."
+	) -> list:
 	"""Get a list of FileInfo objects from specified directory."""
 	
 	fullpath = os.path.abspath(directory)
 	files = []
-	for filename in os.list_dir(fullpath):
+	for filename in os.listdir(fullpath):
 		filename = fullpath + os.sep + filename
 		file = FileInfo(filename)
-		files.append(file
+		files.append(file)
 	return files
 
-def getTotalSize(files: list) -> int
-	"""Obtain total size of files in the list."""
-
-	totalSize = 0
-	for index, file in enumerate(files):
-		totalSize += file.size
-	return totalSize
-
-def filterBySize(
+def classifyBySize(
 		files: list,
 		maxSize: int = 2**40  # 1 TB
 	) -> tuple:
-	"""Filter a list of files based on their size.
+	"""Classify a list of files based on their size.
 	
-	Returns a tuple of 2 lists with included and excluded files.
+	Returns a tuple of 2 lists with small and big files.
 	"""
 	
-	included = []
-	excluded = {}
+	smallFiles = []
+	bigFiles = []
 	for file in files:
 		if file.size <= maxSize:
-			included.append(file)
+			smallFiles.append(file)
 		else:
-			excluded.append(file)
-	return (included, excluded)
-
-def exportCSV(
-		files: list,
-		csvFile: str = "output.csv"
-	) -> None:
-	"""Export CSV from list of files."""
-	
-	csvHeaders = "basename\tsize\tdatetime\n"
-	csvData = [
-			f"{file.basename}\t{file.size}\t{file.formatDateTime()}\n"
-			for file in files
-	]
-
-	# write data to output file
-	print(f"Writing '{csvFile}'...")
-	with open("csv" + os.sep + csvFile, "w") as output:
-		output.write(csvHeaders)
-		output.writelines(csvData)
-	
-	# print summary
-	print(len(files) + " files.")
-	totalMB = getTotalSize(files) / MB
-	print(f"{totalMB:0.2} MB in files")
+			bigFiles.append(file)
+	return (smallFiles, bigFiles)
 
 if __name__ == "__main__":
 	images = getFiles(DIRECTORY)
-	small, large = filterBySize(images, maxSize=SIZE_LIMIT)
+	small, large = classifyBySize(images, maxSize=SIZE_LIMIT)
 	exportCSV(small, csvFile="small.csv")
 	exportCSV(large, csvFile="large.csv")
 
