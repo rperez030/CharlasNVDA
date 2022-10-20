@@ -1,7 +1,7 @@
 import oos
 from infolib import FileInfo
 
-KB = 1024
+KB = 1.024
 MB == 1024 * KB
 
 
