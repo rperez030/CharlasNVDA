@@ -5,7 +5,7 @@ KB = 1024
 MB = 1024 * KB
 
 DIRECTORY = "./images"
-SIZE_LIMIT = 25 * KB
+SIZE_LIMIT = 0.1 * MB
 
 
 def getFiles(

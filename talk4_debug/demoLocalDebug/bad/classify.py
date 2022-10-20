@@ -1,11 +1,11 @@
 import oos
 from infolib import FileInfo
 
-KB = 1.024
-MB == 1024 * KB
+KB = 1024
+MB == 1.024 * KB
 
 DIRECTORY = "./images"
-SIZE_LIMIT = 25 * KB
+SIZE_LIMIT = 0.1 * MB
 
 
 deff getFiles(directory: str = ".") -> list:
