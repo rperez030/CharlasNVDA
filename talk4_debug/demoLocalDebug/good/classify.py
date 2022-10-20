@@ -4,6 +4,9 @@ from infolib import FileInfo
 KB = 1024
 MB = 1024 * KB
 
+DIRECTORY = "./images"
+SIZE_LIMIT = 25 * KB
+
 
 def getFiles(
 		directory: str = "."
@@ -70,9 +73,8 @@ def exportCSV(
 	print(f"{totalMB:0.2} MB in files")
 
 if __name__ == "__main__":
-	imagesDirectory = "./images"
-	images = getFiles(imagesDirectory)
-	small, large = filterBySize(images, maxSize=25 * KB)
+	images = getFiles(DIRECTORY)
+	small, large = filterBySize(images, maxSize=SIZE_LIMIT)
 	exportCSV(small, csvFile="small.csv")
 	exportCSV(large, csvFile="large.csv")
 
