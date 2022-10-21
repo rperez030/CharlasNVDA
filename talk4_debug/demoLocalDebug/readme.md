@@ -22,13 +22,13 @@ La idea es enseñar primero el programa funcionando y luego enseñar el que no f
 1. classify.py: Cambiado el nombre de la librería `os` por `oos`. El linter dará varios warnings relacionados con esto.
 2. classify.py: Cambiada la palabra reservada `def` por `deff`. Esto dará un error en el linter y varios fallos más de sintaxis, indentación o variables no existentes por no haber interpretado bien la línea de definición de la función.
 3. utils/constants.py: Cambiado un `=` por `==`. Si abrimos todos los ficheros esto dará varios warnings en el linter por no existir la variable. Podemos esperar a hacerlo cuando salte la primera excepción.
-4. utils/file_info.py: eliminados los dos puntos finales en la definición de la clase en el módulo `file_info`. Esto no dará error en el linter salvo que se abra explícitamente el fichero en VSCode, pero dará una excepción al arrancar el programa.
+4. utils/output.py: eliminados los dos puntos finales en la definición de la función getTotalSize. Esto no dará error en el linter salvo que se abra explícitamente el fichero en VSCode, pero dará una excepción al arrancar el programa.
 5. Eliminada la carpeta "csv" del raíz. Esto dará un error en tiempo de ejecución al no poder guardar los CSV.
 6. utils/constants.py: Cambiado el valor de KB introduciendo un punto que hace que su valor sea de 1,024 en lugar de 1024. El lector de pantalla no se entera porque lee igual los dos valores. Esto no se puede detectar de forma automática y tampoco provocará una excepción, sino que deberemos investigarlo usando la depuración.
 
 ## Procedimiento para la demo
 
-1. Abrimos sólo el `classify.py` y pasar el linter con Control+Shift+M. Corregir los fallos que saldrán por el cambio de nombre en la librería y en la palabra reservada.
+1. Abrimos sólo el `classify.py` y pasamos el linter con Control+Shift+M. Corregir los fallos que saldrán por el cambio de nombre en la librería y en la palabra reservada.
 2. Arrancamos la depuración. Como no hemos usado el linter en todos los ficheros, saltarán distintas excepciones causadas por los puntos 3 y 4 anteriores. Usamos el linter en todos y corregimos todo lo que salga.
 3. Arrancamos de nuevo la depuración. Salta otra excepción porque la carpeta `csv` para exportar los ficheros no existe. La creamos y arrancamos de nuevo.
 4. En teoría ahora el programa no da fallos, pero clasifica mal por el punto 6 anterior. Aquí habrá que tracear el programa y ver lo que pasa.

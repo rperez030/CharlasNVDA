@@ -2,7 +2,7 @@ import os
 import datetime as dt
 
 
-class FileInfo
+class FileInfo:
     """Single file information.
     
     Attributes: filename, abspath, datetime

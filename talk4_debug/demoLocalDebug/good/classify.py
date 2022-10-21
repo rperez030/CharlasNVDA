@@ -1,15 +1,14 @@
 import os
-from utils import FileInfo, exportCSV
+from utils import FileInfo
+from utils.output import exportCSV
 from utils.constants import MB
 
 
-DIRECTORY = "./images"
+DIRECTORY = "images"
 SIZE_LIMIT = 0.1 * MB
 
 
-def getFiles(
-		directory: str = "."
-	) -> list:
+def getFiles(directory: str = ".") -> list:
 	"""Get a list of FileInfo objects from specified directory."""
 	
 	fullpath = os.path.abspath(directory)

@@ -1,9 +1,7 @@
 import os
 from .constants import KB, MB
 
-def getTotalSize(
-		files: list
-	) -> int:
+def getTotalSize(files: list) -> int:
 	"""Obtain total size of files in the list."""
 
 	totalSize = 0

@@ -19,18 +19,19 @@ Ponentes: Juanjo y Ramón
    * Breve explicación de los modos de ejecución: fichero, módulo, remoto, proceso
    * Errores en tiempo de ejecución. Excepciones
 3. Controlando la ejecución del programa
-   * Añadir y quitar puntos de ruptura (breakpoints). F9 / Shift + F9
-   * Iniciando de nuevo la ejecución con puntos de ruptura.
+   * Añadir y quitar puntos de interrupción (breakpoints). F9 / Shift + F9
+   * Iniciando de nuevo la ejecución con puntos de interrupción.
    * Examinar variables simples y complejas. Control+K & Control+I
    * Ejecución paso a paso. F10, F11
    * La terminal y la consola de depuración.
 4. Depuración avanzada
-   * El panel de depuración. Creando un fichero `launch.json`.
+   * El panel de depuración. Control+shif+D.
    * Secciones en el panel de depuración: variables, breakpoints, watchers, call stack.
    * Examinar variables desde el panel de depuración.
    * Breakpoints condicionales y por "impactos". Breakpoints de funciones.
    * Monitorizar expresiones (watchers).
    * La pila de llamadas (call stack).
+   * El panel de depuración. Creando un fichero `launch.json`.
 
 ## Parte 2: depuración de complementos y del código fuente de NVDA
 
