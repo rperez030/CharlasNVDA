@@ -47,12 +47,12 @@ Primero enseñaremos el programa funcionando (good) para que se vea cuál es el 
 ### Trazando el programa
 
 1. Estudiamos lo que hace el programa principal (tras el if __name__) para ver por dónde empezar
-2. Como el error es obviamente de de clasificación, empezamos poniendo un breakpoint en la línea donde se llama a la función `classifyBySize()`.
-3. Iniciamos la depuración, se parará en el breakpoint y enseñamos el uso de F10 para ir paso a paso. Miramos lo que hay en las variables `small` y `big`
-4. Como F10 ejecuta la línea entera en ese punto ya no nos sirve de mucho porque nos hemos saltado la función entera. Reiniciamos y usamos F11 en su lugar y luego F10 por la función..
-5. Pasamos varias veces con F10 por el bucle for para ver que se están yendo todos los ficheros al `bigFiles`. Salimos con Shift+F11 para enseñarlo y continuar.
-6. Añadimos un breakpoint en el bucle que pare tras 5 impactos. Reiniciamos y examinamos lo que hay en `bifFiles` y `smallFiles`.
-7. Añadimos un breakpoint condicional para que pare siempre que el `file.size <= 0.1 * 1024 * 1024*`. Reiniciamos y observamos lo que pasa.
-8. Volvemos a empezar. Nos volvemos a meter en la función y la examinamos para ver bien lo que hace. Colocamos un breakpoint dentro del if donde se decide a dónde va el fichero y un watcher con `file.size` y otro con `file.size <= maxSize`.
-9. Al ver que está fallando la comparación examinamos `maxSize` (los tamaños están bien). Buscamos su definición con F12, y a su vez la de SIZE_LIMIT y la de KB, donde descubriremos el fallo.
-
+2. Como el error es claro de clasificación, empezamos poniendo un breakpoint en la línea justo detrás de la llamada a la función `classifyBySize()`.
+3. Iniciamos la depuración, se parará justo tras la llamada al clasificador. Miramos lo que hay en las variables `small` y `big`
+4. Cambiamos el breakpoint a la línea de la llamada. Enseñamos el uso de F10 para ir paso a paso.
+5. Como F10 ejecuta la línea entera en ese punto ya no nos sirve de mucho porque nos hemos saltado la función entera. Reiniciamos y usamos F11 en su lugar y luego F10 por la función.
+6. Pasamos varias veces con F10 por el bucle for para ver que se están yendo todos los ficheros al `bigFiles`. Salimos con Shift+F11 para enseñarlo y continuar.
+7. Añadimos un breakpoint en el bucle que pare tras 5 impactos. Reiniciamos y examinamos lo que hay en `bifFiles` y `smallFiles`.
+8. Añadimos un breakpoint condicional para que pare siempre que el `file.size <= 0.1 * 1024 * 1024*`. Reiniciamos y observamos lo que pasa.
+9. Volvemos a empezar. Nos volvemos a meter en la función y la examinamos para ver bien lo que hace. Colocamos un breakpoint dentro del if donde se decide a dónde va el fichero y un watcher con `file.size` y otro con `file.size <= maxSize`.
+10. Al ver que está fallando la comparación examinamos `maxSize` (los tamaños están bien). Buscamos su definición con F12, y a su vez la de SIZE_LIMIT y la de KB, donde descubriremos el fallo.
