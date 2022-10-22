@@ -1,3 +1,8 @@
+---
+title: "Sesión de Git con Visual Studio Code"
+permalink: /git/
+---
+
 # Control de versiones.
 
 Git y Github desde Visual Studio Code
