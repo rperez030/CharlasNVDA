@@ -1,5 +1,5 @@
 import os
-from .constants import KB, MB
+from .constants import KB, MB, WORKING_DIRECTORY
 
 def getTotalSize(files: list) -> int:
 	"""Obtain total size of files in the list."""
@@ -23,7 +23,7 @@ def exportCSV(
 
 	# write data to output file
 	print(f"Writing '{csvFile}'...")
-	with open("csv" + os.sep + csvFile, "w") as output:
+	with open(WORKING_DIRECTORY + os.sep + "csv" + os.sep + csvFile, "w") as output:
 		output.write(csvHeaders)
 		output.writelines(csvData)
 	

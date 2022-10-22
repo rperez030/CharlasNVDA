@@ -1,10 +1,10 @@
 import os
 from utils import FileInfo
 from utils.output import exportCSV
+from utils.constants import WORKING_DIRECTORY
 
 
 DIRECTORY = "images"
-WORKING_DIRECTORY = os.path.dirname(__file__)
 
 
 def removeCSVFiles():
