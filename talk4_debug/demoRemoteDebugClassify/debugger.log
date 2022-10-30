@@ -1,0 +1,5 @@
+2022-10-23 01:40:21,794 [WARNING] debugger: Debug session already connected.
+2022-10-23 02:00:20,115 [INFO] debugger: Saving debugpy logs in log directory
+2022-10-23 02:00:20,115 [INFO] debugger: External Python assigned to C:\Users\Tinitun\AppData\Local\Programs\Python\Python37-32\python.exe
+2022-10-23 02:00:20,464 [INFO] debugger: Listening in port 2633
+2022-10-23 02:01:11,052 [INFO] debugger: Continued after wairting for client

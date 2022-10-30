@@ -1,4 +1,4 @@
-import oos
+import os
 from utils import FileInfo
 from utils.output import exportCSV
 from utils.constants import MB
@@ -8,7 +8,7 @@ DIRECTORY = "images"
 SIZE_LIMIT = 0.1 * MB
 
 
-deff getFiles(directory: str = ".") -> list:
+def getFiles(directory: str = ".") -> list:
 	"""Get a list of FileInfo objects from specified directory."""
 	
 	fullpath = os.path.abspath(directory)
@@ -31,7 +31,8 @@ def classifyBySize(
 	smallFiles = []
 	bigFiles = []
 	for file in files:
-		if file.size <= maxSize:
+		isSmallFile = bool(file.size <= maxSize)
+		if isSmallFile:
 			smallFiles.append(file)
 		else:
 			bigFiles.append(file)
@@ -42,4 +43,5 @@ if __name__ == "__main__":
 	small, large = classifyBySize(images, maxSize=SIZE_LIMIT)
 	exportCSV(small, csvFile="small.csv")
 	exportCSV(large, csvFile="large.csv")
+	pass
 

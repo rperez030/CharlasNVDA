@@ -46,17 +46,102 @@ Ponentes: Juanjo y Ramón
    * Ramón: Abrir el panel de depuración. Control+Shift+D. Posibles problemas con el depurador de Python.
    * Ramón: Resumen de las secciones del panel de depuración.
    * Ramón: Breakpoints condicionales por expresiones y por número de hits. Seguimos examinando variables.
-   * Juanjo: Examinando variables desde el panel de depuración.
+   * Juanjo: Examinando variables desde el panel de depuración. Cambiar valores en tiempo de ejecución.
    * Juanjo: Monitorizando variables y expresiones mediante watchers.
    * Ramón: Siguiendo el rastro de las variables definidas y llegando al meollo del problema.
 
-### Depuración avanzada
-
-1. Ramón: La terminal integrada y la consola de depuración.
-2. Juanjo: La pila de llamadas (call stack).
-
 ## Parte 2: depuración de complementos y del código fuente de NVDA
 
-Ponentes: Ramón y **
+Ponentes: Ramón, Gustavo y Rober
 
-1. El panel de depuración. Creando un fichero `launch.json`.
+### Intro: advertencias generales
+
+1. Charla muuuuy técnica, no intentéis esto en casa
+2. lo que vamos a hacer
+3. recordatorio depuración local: explicación del demoGame
+   * ejecutarlo desde la terminal interna
+   * crear un launch.json
+   * configurar terminal externa
+4. depuración remota
+   * intro a la depuración remota
+   * librería necesaria
+   * creación del entorno virtual
+   * verificar que podemos importar debugpy
+   * debugpy y .listen()
+   * jugando remotamente
+   * wait_for_client()
+   * jugando de nuevo
+   * comprobando dónde están los el resultados
+5. Aplicando la depuración remota para depurar addons
+   * insertando el debugger en el código del addon
+   * ¿por qué NVDA se reinicia contínuamente?
+   * debugpy.log_to()
+   * debugpy.configure(python)
+   * path mappings 1
+6. Depurando NVDA
+   * Insertando el depurador en el inicio de NVDA
+   * launch.json con dos perfiles para el inicio y para el NVDA ya ejecutándose
+   * Jugando a depurar NVDA
+
+
+
+
+### Depuración avanzada
+
+1. La terminal integrada y la consola de depuración.
+2. Perfiles de depuración
+   * Creando un fichero `launch.json`.
+   * Cambiar la terminal por defecto a la terminal externa.
+3. La pila de llamadas (call stack).
+autocompletado y revisión de funciones como si fueran variables
+la terminal externa
+logpoints
+depuración remota
+entorno virtual con debugpy
+abriendo puerto e interfaz de conexión con 0.0.0.0
+log de depuración por si acaso
+esperando conexiones
+
+### Depurando complementos
+
+máquinas virtuales para depurar
+Depurando complementos. Debugpy dentro de un complemento. WaitForClient
+el puerto sólo se levanta una vez
+Configurar el python que lanzará el servidor de depuración
+path mappings 1
+justMyCode
+
+### Depurando NVDA
+
+NVDA ejecutándose desde los fuentes
+interceptar el propio inicio de NVDA
+Engancharse a la depuración antes y después de iniciado NVDA
+
+
+### Frikadas varias
+
+remote python console
+Live share & live audio
+función print modificada para hablar
+NVDA remote iOS y depuración con Mac
+launch con configuración múltiple para lanzar y depurar en remoto a la vez
+
+## Pasos para depurar NVDA
+
+1. Crear una máquina virtual con el sistema que queramos depurar.
+2. Instalar máquina virtual
+   * NVDA instalado con el acceso directo y atajo de teclado que permita arrancarlo en caso de necesidad.
+   * NVDA que se depurará, en principio el del source, pero también se puede hacer con el instalado o con un portable, aunque hay que cambiar cosas.
+   * Python 3.7.9. Para crear el entorno virtual en el source y también para lanzar el subproceso de debugpy, aunque para esto último serviría una versión más reciente también.
+   * Git (opcional). Es útil para clonar y mantener actualizado el repo de NVDA. Esto conviene hacerlo desde un fork, también se puede acceder a través de una carpeta compartida con el host.
+   * VSCode (opcional). Aunque no es imprescindible puede ser útil para determinadas tareas en la máquina virtual.
+   * TeleNVDA (opcional). Puede servir para acceder más rápidamente al guest sin necesidad de cambiar a VMware y activar la máquina con Control+G.
+
+
+   conectar dos clientes por dos puertos distintos?
+justMyCode
+timeout en el launch
+ejecutar comandos en el remoto, borrar ficheros, play de un audio...
+SSH para conectar al servidor de depuración
+remote python console
+con la consola ejecutar un subprocess con un servidor web
